@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="login()">登录</button>
+		<button onclick="logout()">注销</button>
+		<script src="../jquery.js"></script>
+		<script>
+			function login() {
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:88/cs1701/nodejs/day3/php/login.php",
+					success(data) {
+						console.log(data)
+					}
+				})
+			}
+			
+			function logout() {
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:88/cs1701/nodejs/day3/php/logout.php",
+					success(data) {
+						console.log(data)
+					}
+				})
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div></div>
+		<script src="utf8-php/jquery.js"></script>
+		<script>
+			$.ajax({
+				type: "get",
+				url: "http://localhost:8888/showhtml",
+				async: true,
+			}).done((data)=>{
+				console.log(data)
+				var html = data.results.map(function(item){
+					console.log(item.template)
+					return item.template
+				}).join("");
+				console.log(html)
+				$("div").html(html)
+			})
+		</script>
+	</body>
+
+</html>

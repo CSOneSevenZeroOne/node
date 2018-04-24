@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="username" type="text" />
+		<input id="password" type="password" />
+		<button onclick="login()">登录</button>
+		<script src="jquery.js"></script>
+		<script>
+			function login(){
+				$.ajax({
+					type:"POST",
+					url:"http://localhost:88/cs1701/nodejs/day2/login.php",
+					data:{
+						username:$("#username").val(),
+						password:$("#password").val(),
+					},
+					success(data){
+						console.log(data)
+					}
+				})
+			}
+		</script>
+	</body>
+</html>
